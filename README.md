@@ -20,7 +20,8 @@ npm run lint
 ```
 
 Run tests with Chimp:
-
+First run app in one console then open second console and run:
 ```bash
 npm run chimp
 ```
+Chimp will poll your app for changes while you write your tests.
