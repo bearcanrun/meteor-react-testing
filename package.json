@@ -1,0 +1,79 @@
+{
+  "name": "meteor-react-testing",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "lint": "eslint .",
+    "pretest": "npm run lint --silent",
+    "chimp": "./node_modules/.bin/chimp --ddp=http://localhost:3000 --watch --mocha --path=tests"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.4.1",
+    "bcrypt": "^0.8.7",
+    "classnames": "^2.2.5",
+    "faker": "^3.1.0",
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.3.1",
+    "react-addons-css-transition-group": "^15.3.1",
+    "react-addons-pure-render-mixin": "^15.3.1",
+    "react-addons-test-utils": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-router": "^2.7.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "enzyme": "^2.4.1",
+    "eslint": "^3.4.0",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-import-resolver-meteor": "^0.3.3",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.2.1",
+    "eslint-plugin-meteor": "^4.0.0",
+    "eslint-plugin-react": "^6.2.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "meteor": true,
+      "node": true,
+      "browser": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "allowImportExportEverywhere": true
+    },
+    "plugins": [
+      "meteor"
+    ],
+    "extends": [
+      "airbnb",
+      "plugin:meteor/recommended"
+    ],
+    "rules": {
+      "meteor/eventmap-params": [
+        2,
+        {
+          "eventParamName": "event",
+          "templateInstanceParamName": "instance"
+        }
+      ],
+      "meteor/template-names": [
+        0
+      ],
+      "import/no-extraneous-dependencies": "off"
+    },
+    "settings": {
+      "import/resolver": "meteor"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          "last 2 versions"
+        ]
+      }
+    }
+  }
+}
