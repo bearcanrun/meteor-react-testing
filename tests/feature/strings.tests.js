@@ -1,7 +1,6 @@
 /* eslint-env mocha */
 /* eslint-disable func-names, prefer-arrow-callback */
 
-import { describe, it } from 'mocha';
 import assert from 'assert';
 import strings from '../../imports/lib/strings.js';
 
