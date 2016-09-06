@@ -51,7 +51,7 @@ dburles:factory
 johanbrook:publication-collector
 xolvio:cleaner
 dispatch:mocha-phantomjs
-practicalmeteor:mocha
+practicalmeteor:mocha@=2.4.5_6
 hwillson:stub-collections
 practicalmeteor:chai
 practicalmeteor:sinon

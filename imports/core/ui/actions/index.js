@@ -5,8 +5,8 @@ const actions = {
   clearMessages() {
     return { type: CLEAR_MESSAGES };
   },
-  showMessage() {
-    return { type: SHOW_MESSAGE };
+  showMessage(message) {
+    return { type: SHOW_MESSAGE, message };
   },
 };
 
