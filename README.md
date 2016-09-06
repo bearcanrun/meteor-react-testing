@@ -13,13 +13,19 @@ npm start
 
 ### Scripts
 
-To lint:
-
+*To lint:*
 ```bash
 npm run lint
 ```
 
-Run tests with Chimp:
+*Run unit tests*
+Run app in one console window.
+Then in another console run:
+```bash
+meteor test --driver-package practicalmeteor:mocha --port 3100
+```
+
+*Run tests with Chimp:*
 First run app in one console then open second console and run:
 ```bash
 npm run chimp
