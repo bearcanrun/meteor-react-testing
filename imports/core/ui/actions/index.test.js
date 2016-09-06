@@ -1,3 +1,6 @@
+/* eslint-env mocha */
+/* eslint-disable func-names, prefer-arrow-callback */
+
 import { describe, it, expect } from 'mocha';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';

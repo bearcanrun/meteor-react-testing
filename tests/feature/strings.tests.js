@@ -1,3 +1,6 @@
+/* eslint-env mocha */
+/* eslint-disable func-names, prefer-arrow-callback */
+
 import { describe, it } from 'mocha';
 import assert from 'assert';
 import strings from '../../imports/lib/strings.js';
@@ -84,11 +87,12 @@ describe('strings module @focus', function () {
     assert.equal(dashed, expected);
   });
 
-  it('should insert dash & lower-case capitalized letters and insert dash before number groups', function () {
-    const camel = 'sample123Dashed456TEST7a';
-    const expected = 'sample-123-dashed-456-t-e-s-t-7a';
+  it('should insert dash & lower-case capitalized letters and insert dash before number groups',
+    function () {
+      const camel = 'sample123Dashed456TEST7a';
+      const expected = 'sample-123-dashed-456-t-e-s-t-7a';
 
-    const dashed = strings.dashSeparated(camel);
-    assert.equal(dashed, expected);
-  });
+      const dashed = strings.dashSeparated(camel);
+      assert.equal(dashed, expected);
+    });
 });
