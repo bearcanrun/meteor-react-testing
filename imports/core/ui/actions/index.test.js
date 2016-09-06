@@ -7,8 +7,8 @@ import { actions as coreActions } from './index';
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
-describe('core actions', () => {
-  it('should dispatch', () => {
+describe('core actions', function () {
+  it('should dispatch', function () {
     const initialState = {};
     const clearMessages = coreActions.clearMessages;
 

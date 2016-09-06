@@ -2,8 +2,8 @@ import { describe, it } from 'mocha';
 import assert from 'assert';
 import strings from '../../imports/lib/strings.js';
 
-describe('strings module @focus', () => {
-  it('should camelCase string with one dash', () => {
+describe('strings module @focus', function () {
+  it('should camelCase string with one dash', function () {
     const dashed = 'sample-string';
     const expected = 'sampleString';
 
@@ -12,7 +12,7 @@ describe('strings module @focus', () => {
     assert.equal(camel, expected);
   });
 
-  it('should camelCase string with three dashes', () => {
+  it('should camelCase string with three dashes', function () {
     const dashed = 'sample-string-with-dashes';
     const expected = 'sampleStringWithDashes';
 
@@ -21,7 +21,7 @@ describe('strings module @focus', () => {
     assert.equal(camel, expected);
   });
 
-  it('should not camelCase string with no dashes', () => {
+  it('should not camelCase string with no dashes', function () {
     const dashed = 'samplestring';
     const expected = 'samplestring';
 
@@ -30,7 +30,7 @@ describe('strings module @focus', () => {
     assert.equal(camel, expected);
   });
 
-  it('should camelCase string with dashes and numbers', () => {
+  it('should camelCase string with dashes and numbers', function () {
     const dashed = 'sample-string-123';
     const expected = 'sampleString123';
 
@@ -39,7 +39,7 @@ describe('strings module @focus', () => {
     assert.equal(camel, expected);
   });
 
-  it('should not camelCase string with numbers no dashes', () => {
+  it('should not camelCase string with numbers no dashes', function () {
     const dashed = 'sample123';
     const expected = 'sample123';
 
@@ -48,7 +48,7 @@ describe('strings module @focus', () => {
     assert.equal(camel, expected);
   });
 
-  it('should replace capitalized letters with lower-case letter and dash', () => {
+  it('should replace capitalized letters with lower-case letter and dash', function () {
     const camel = 'sampleString';
     const expected = 'sample-string';
 
@@ -57,7 +57,7 @@ describe('strings module @focus', () => {
     assert.equal(dashed, expected);
   });
 
-  it('should replace capitalized letters with lower-case letters prefixed by dashes', () => {
+  it('should replace capitalized letters with lower-case letters prefixed by dashes', function () {
     const camel = 'sampleStringWithDashes';
     const expected = 'sample-string-with-dashes';
 
@@ -66,7 +66,7 @@ describe('strings module @focus', () => {
     assert.equal(dashed, expected);
   });
 
-  it('should insert dash in front of numbers', () => {
+  it('should insert dash in front of numbers', function () {
     const camel = 'sample1';
     const expected = 'sample-1';
 
@@ -75,7 +75,7 @@ describe('strings module @focus', () => {
     assert.equal(dashed, expected);
   });
 
-  it('should insert dash in front of numbers but keep numbers grouped', () => {
+  it('should insert dash in front of numbers but keep numbers grouped', function () {
     const camel = 'sample123';
     const expected = 'sample-123';
 
@@ -84,7 +84,7 @@ describe('strings module @focus', () => {
     assert.equal(dashed, expected);
   });
 
-  it('should insert dash & lower-case capitalized letters and insert dash before number groups', () => {
+  it('should insert dash & lower-case capitalized letters and insert dash before number groups', function () {
     const camel = 'sample123Dashed456TEST7a';
     const expected = 'sample-123-dashed-456-t-e-s-t-7a';
 
