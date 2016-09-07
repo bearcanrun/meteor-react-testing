@@ -13,31 +13,33 @@ import * as types from './constants.js';
 
 chai.use(chaiSubset);
 
-describe('action dispatch clearMessages', function () {
-  it('should return function clearMessages', function () {
-    chai.assert.isFunction(actions.clearMessages, 'that is a function');
+describe('core redux actions', function () {
+  describe('action dispatch clearMessages', function () {
+    it('should return function clearMessages', function () {
+      chai.assert.isFunction(actions.clearMessages, 'that is a function');
+    });
+
+    it('should create action type object', function () {
+      const expectedAction = { type: types.CLEAR_MESSAGES };
+
+      chai.expect(actions.clearMessages())
+        .to.containSubset(expectedAction, 'clearMessages return object');
+    });
   });
 
-  it('should create action type object', function () {
-    const expectedAction = { type: types.CLEAR_MESSAGES };
+  describe('action dispatch showMessage', function () {
+    it('should return function showMessages', function () {
+      chai.assert.isFunction(actions.showMessage, 'that is a function');
+    });
+    it('should create action type object with message', function () {
+      const message = 'This is a message';
 
-    chai.expect(actions.clearMessages())
-      .to.containSubset(expectedAction, 'clearMessages return object');
-  });
-});
+      const expectedAction = {
+        type: types.SHOW_MESSAGE,
+        message,
+      };
 
-describe('action dispatch showMessage', function () {
-  it('should return function showMessages', function () {
-    chai.assert.isFunction(actions.showMessage, 'that is a function');
-  });
-  it('should create action type object with message', function () {
-    const message = 'This is a message';
-
-    const expectedAction = {
-      type: types.SHOW_MESSAGE,
-      message,
-    };
-
-    chai.expect(actions.showMessage(message)).to.containSubset(expectedAction);
+      chai.expect(actions.showMessage(message)).to.containSubset(expectedAction);
+    });
   });
 });
