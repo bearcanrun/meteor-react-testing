@@ -5,14 +5,13 @@
     "start": "meteor run",
     "lint": "eslint .",
     "pretest": "npm run lint --silent",
+    "tests": "meteor test --driver-package practicalmeteor:mocha --port 3100",
     "chimp": "./node_modules/.bin/chimp --ddp=http://localhost:3000 --watch --mocha --path=tests"
   },
   "dependencies": {
     "autoprefixer": "^6.4.1",
     "bcrypt": "^0.8.7",
     "classnames": "^2.2.5",
-    "faker": "^3.1.0",
-    "meteor-node-stubs": "~0.2.0",
     "react": "^15.3.1",
     "react-addons-css-transition-group": "^15.3.1",
     "react-addons-pure-render-mixin": "^15.3.1",
@@ -29,7 +28,9 @@
     "eslint-plugin-import": "^1.14.0",
     "eslint-plugin-jsx-a11y": "^2.2.1",
     "eslint-plugin-meteor": "^4.0.0",
-    "eslint-plugin-react": "^6.2.0"
+    "eslint-plugin-react": "^6.2.0",
+    "faker": "^3.1.0",
+    "meteor-node-stubs": "~0.2.0"
   },
   "eslintConfig": {
     "env": {

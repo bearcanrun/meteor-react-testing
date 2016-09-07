@@ -13,15 +13,27 @@ npm start
 
 ### Scripts
 
-To lint:
-
+**To lint:**
 ```bash
 npm run lint
 ```
 
-Run tests with Chimp:
+**Run unit tests**
+Run app in one console window.
+Then in another console run:
+```bash
+npm run tests
+```
+
+**Run tests with Chimp:**
 First run app in one console then open second console and run:
 ```bash
 npm run chimp
 ```
 Chimp will poll your app for changes while you write your tests.
+
+### With Redux
+There is a `with-redux` branch with redux and redux-router setup.
+```bash
+git clone -b with-redux https://github.com/bearcanrun/meteor-react-testing.git
+```
