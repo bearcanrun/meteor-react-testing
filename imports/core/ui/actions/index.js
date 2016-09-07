@@ -1,12 +1,11 @@
-export const CLEAR_MESSAGES = 'ACCOUNTS: Clear Messages';
-export const SHOW_MESSAGE = 'ACCOUNTS: Show Message';
+import * as types from './constants.js';
 
 const actions = {
   clearMessages() {
-    return { type: CLEAR_MESSAGES };
+    return { type: types.CLEAR_MESSAGES };
   },
   showMessage(message) {
-    return { type: SHOW_MESSAGE, message };
+    return { type: types.SHOW_MESSAGE, message };
   },
 };
 
