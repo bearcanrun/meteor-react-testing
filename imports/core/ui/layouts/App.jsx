@@ -1,21 +1,16 @@
-import React, {PropTypes as T} from 'react';
-import { Meteor } from 'meteor/meteor';
+/* eslint-disable react/prefer-stateless-function */
+import React, { PropTypes as T } from 'react';
+
+import MainPage from '../components/MainPage.jsx';
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-  }
-
   render() {
-    const {
-      welcome
-    } = this.props;
+    const { props } = this.props;
 
     return (
       <div id="container" className="main">
         <div id="content-container">
-          {welcome}
+          <MainPage welcome={props.welcome} />
         </div>
       </div>
     );
@@ -23,5 +18,5 @@ export default class App extends React.Component {
 }
 
 App.propTypes = {
-  welcome: T.string,      // first simple welcome prop — like 'Hello world!'
+  props: T.object,      // first simple welcome prop — like 'Hello world!'
 };
