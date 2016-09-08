@@ -25,9 +25,25 @@ Then in another console run:
 npm run test
 ```
 
+To run while watching for changes:
+```bash
+npm run watch
+```
+
 **Run tests with Chimp:**
 First run app in one console then open second console and run:
 ```bash
 npm run chimp
 ```
 Chimp will poll your app for changes while you write your tests.
+
+### Resources
+
+[The Ultimate Unit Testing Cheat-sheet](https://gist.github.com/yoavniran/1e3b0162e1545055429e)
+
+### Notes
+Using npm mocha/chai/sinon instead of practicalmeteor:mocha/chia/sinon because of experiencing similar errors with Meteor in [enzyme 302](https://github.com/airbnb/enzyme/issues/302)
+
++Meteor test is slow!
+
+Since we are no longer using practicalmeteor, we may run into future dependency issues with 'meteor/meteor', etc. so can try [testdouble.js](https://github.com/pcorey/unit-testing-with-testdouble)

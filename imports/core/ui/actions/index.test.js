@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 /* eslint-disable func-names, prefer-arrow-callback */
-import { chai } from 'meteor/practicalmeteor:chai';
+import chai from 'chai';
 import chaiSubset from 'chai-subset';
 // import configureStore from 'redux-mock-store';
 // import thunk from 'redux-thunk';
@@ -13,8 +13,8 @@ import * as types from './constants.js';
 
 chai.use(chaiSubset);
 
-describe('core redux actions', function () {
-  describe('action dispatch clearMessages', function () {
+describe('Core Redux - Action dispatch', function () {
+  describe('clearMessages', function () {
     it('should return function clearMessages', function () {
       chai.assert.isFunction(actions.clearMessages, 'that is a function');
     });
@@ -27,7 +27,7 @@ describe('core redux actions', function () {
     });
   });
 
-  describe('action dispatch showMessage', function () {
+  describe('showMessage', function () {
     it('should return function showMessages', function () {
       chai.assert.isFunction(actions.showMessage, 'that is a function');
     });
