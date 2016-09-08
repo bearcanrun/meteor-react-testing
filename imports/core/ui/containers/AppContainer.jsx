@@ -1,9 +1,8 @@
-import { Meteor } from 'meteor/meteor';
+import React from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import App from '../layouts/App.jsx';
+import MainPage from '../components/MainPage.jsx';
 
-export default createContainer(() => {
-  return {
-    welcome: 'Building an App with React using BDD/TDD'
-  };
-}, App);
+const welcome = 'This is a Meteor boilerplate for learning BDD/TDD';
+
+export default createContainer(() => (<MainPage welcome={welcome} />), App);

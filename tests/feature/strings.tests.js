@@ -1,93 +1,97 @@
-import strings from '../../imports/lib/strings.js';
+/* eslint-env mocha */
+/* eslint-disable func-names, prefer-arrow-callback */
+
 import assert from 'assert';
+import strings from '../../imports/lib/strings.js';
 
-describe ('strings module @focus', function(){
-  it('should camelCase string with one dash', function() {
-    var dashed = 'sample-string';
-    var expected = 'sampleString';
+describe('strings module @focus', function () {
+  it('should camelCase string with one dash', function () {
+    const dashed = 'sample-string';
+    const expected = 'sampleString';
 
-    var camel = strings.camelCase(dashed);
-
-    assert.equal(camel, expected);
-  });
-
-  it('should camelCase string with three dashes', function() {
-    var dashed = 'sample-string-with-dashes';
-    var expected = 'sampleStringWithDashes';
-
-    var camel = strings.camelCase(dashed);
+    const camel = strings.camelCase(dashed);
 
     assert.equal(camel, expected);
   });
 
-  it('should not camelCase string with no dashes', function() {
-    var dashed = 'samplestring';
-    var expected = 'samplestring';
+  it('should camelCase string with three dashes', function () {
+    const dashed = 'sample-string-with-dashes';
+    const expected = 'sampleStringWithDashes';
 
-    var camel = strings.camelCase(dashed);
-
-    assert.equal(camel, expected);
-  });
-
-  it('should camelCase string with dashes and numbers', function() {
-    var dashed = 'sample-string-123';
-    var expected = 'sampleString123';
-
-    var camel = strings.camelCase(dashed);
+    const camel = strings.camelCase(dashed);
 
     assert.equal(camel, expected);
   });
 
-  it('should not camelCase string with numbers no dashes', function() {
-    var dashed = 'sample123';
-    var expected = 'sample123';
+  it('should not camelCase string with no dashes', function () {
+    const dashed = 'samplestring';
+    const expected = 'samplestring';
 
-    var camel = strings.camelCase(dashed);
+    const camel = strings.camelCase(dashed);
 
     assert.equal(camel, expected);
   });
 
-  it('should replace capitalized letters with lower-case letter and dash', function() {
-    var camel = 'sampleString';
-    var expected = 'sample-string';
+  it('should camelCase string with dashes and numbers', function () {
+    const dashed = 'sample-string-123';
+    const expected = 'sampleString123';
 
-    var dashed = strings.dashSeparated(camel);
+    const camel = strings.camelCase(dashed);
+
+    assert.equal(camel, expected);
+  });
+
+  it('should not camelCase string with numbers no dashes', function () {
+    const dashed = 'sample123';
+    const expected = 'sample123';
+
+    const camel = strings.camelCase(dashed);
+
+    assert.equal(camel, expected);
+  });
+
+  it('should replace capitalized letters with lower-case letter and dash', function () {
+    const camel = 'sampleString';
+    const expected = 'sample-string';
+
+    const dashed = strings.dashSeparated(camel);
 
     assert.equal(dashed, expected);
   });
 
-  it('should replace capitalized letters with lower-case letters prefixed by dashes', function() {
-    var camel = 'sampleStringWithDashes';
-    var expected = 'sample-string-with-dashes';
+  it('should replace capitalized letters with lower-case letters prefixed by dashes', function () {
+    const camel = 'sampleStringWithDashes';
+    const expected = 'sample-string-with-dashes';
 
-    var dashed = strings.dashSeparated(camel);
-
-    assert.equal(dashed, expected);
-  });
-
-  it('should insert dash in front of numbers', function() {
-    var camel = 'sample1';
-    var expected = 'sample-1';
-
-    var dashed = strings.dashSeparated(camel);
+    const dashed = strings.dashSeparated(camel);
 
     assert.equal(dashed, expected);
   });
 
-  it('should insert dash in front of numbers but keep numbers grouped', function() {
-    var camel = 'sample123';
-    var expected = 'sample-123';
+  it('should insert dash in front of numbers', function () {
+    const camel = 'sample1';
+    const expected = 'sample-1';
 
-    var dashed = strings.dashSeparated(camel);
+    const dashed = strings.dashSeparated(camel);
 
     assert.equal(dashed, expected);
   });
 
-  it('should insert dash & lower-case capitalized letters and insert dash before number groups', function() {
-    var camel = 'sample123Dashed456TEST7a';
-    var expected = 'sample-123-dashed-456-t-e-s-t-7a';
+  it('should insert dash in front of numbers but keep numbers grouped', function () {
+    const camel = 'sample123';
+    const expected = 'sample-123';
 
-    var dashed = strings.dashSeparated(camel)
+    const dashed = strings.dashSeparated(camel);
+
     assert.equal(dashed, expected);
   });
+
+  it('should insert dash & lower-case capitalized letters and insert dash before number groups',
+    function () {
+      const camel = 'sample123Dashed456TEST7a';
+      const expected = 'sample-123-dashed-456-t-e-s-t-7a';
+
+      const dashed = strings.dashSeparated(camel);
+      assert.equal(dashed, expected);
+    });
 });
